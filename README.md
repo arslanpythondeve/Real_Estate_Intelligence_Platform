@@ -1,47 +1,68 @@
-# Property Data Scraping & API Automation System
+# Real Estate Intelligence Platform
 
 ## Overview
 
-This project is a scalable Property Data Scraping & API Automation System developed to extract real estate data dynamically from multiple property websites based on user-defined filters.
+The **Real Estate Intelligence Platform** is a scalable property aggregation and automation system that centralizes real estate listings from multiple property websites into a single API-driven platform.
 
-The system consists of **15 custom web scrapers** integrated with a **FastAPI backend**, allowing users to request only the data they need through API endpoints. Instead of scraping complete websites, the platform performs targeted data extraction, improving both performance and efficiency.
+Instead of manually searching across different websites, users can submit **JSON-based filters** through a FastAPI API to retrieve only the properties that match their requirements. The platform intelligently selects the appropriate scraper, extracts relevant listings, and returns standardized JSON responses for seamless integration with other applications.
 
----
-
-## Features
-
-* 15 Custom Property Website Scrapers
-* Dynamic Filter-Based Data Extraction
-* FastAPI-Powered Backend
-* Pydantic Request Validation
-* Automated Scraper Selection
-* Structured JSON Responses
-* Scalable Architecture
-* Efficient Resource Utilization
+This solution significantly reduces research time for property dealers, investors, and real estate businesses by providing centralized, business-ready property data.
 
 ---
 
-## Workflow
+## Key Features
+
+* Aggregates property listings from **15+ real estate websites**
+* Dynamic JSON-based property search filters
+* Intelligent scraper selection based on the requested source
+* FastAPI-powered REST API
+* Request validation using Pydantic
+* Automated data extraction with Selenium and Scrapy
+* Standardized JSON responses
+* Modular and scalable scraper architecture
+* Easy integration with web and mobile applications
+
+---
+
+## Business Impact
+
+* Eliminated manual property searches across multiple websites.
+* Automated property discovery using flexible JSON-based filters.
+* Reduced research time for property dealers and real estate professionals.
+* Delivered standardized, business-ready property data for faster decision-making.
+* Improved efficiency by scraping only relevant listings instead of entire websites.
+
+---
+
+## Architecture
 
 ```text
-User Filters
-      ↓
-FastAPI API Request
-      ↓
+Client Request
+      │
+      ▼
+ FastAPI REST API
+      │
+      ▼
 Pydantic Validation
-      ↓
-Source-Based Scraper Selection
-      ↓
-Targeted Data Scraping
-      ↓
-Structured JSON Response
+      │
+      ▼
+Scraper Selection Engine
+      │
+      ▼
+Selenium / Scrapy Scrapers
+      │
+      ▼
+Property Data Extraction
+      │
+      ▼
+Standardized JSON Response
 ```
 
 ---
 
-## Supported Filters
+## Supported Search Filters
 
-Depending on the selected property source, users can apply filters such as:
+Users can search properties using filters such as:
 
 * Location
 * Property Type
@@ -50,7 +71,7 @@ Depending on the selected property source, users can apply filters such as:
 * Bathrooms
 * Area Size
 * Listing Type
-* Additional Source-Specific Filters
+* Source-specific filters
 
 ---
 
@@ -62,9 +83,10 @@ Depending on the selected property source, users can apply filters such as:
 * FastAPI
 * Pydantic
 
-### Data Extraction
+### Web Scraping
 
-* Custom Web Scrapers
+* Selenium
+* Scrapy
 * HTTP Requests
 * HTML Parsing
 
@@ -76,15 +98,15 @@ Depending on the selected property source, users can apply filters such as:
 
 ---
 
-## API Flow
+## API Workflow
 
-1. User sends filter parameters through API.
-2. FastAPI receives the request.
-3. Pydantic validates incoming data.
-4. System identifies the target property source.
-5. Relevant scraper is executed.
-6. Data is extracted according to provided filters.
-7. Clean and structured JSON response is returned.
+1. Client sends search filters as a JSON request.
+2. FastAPI validates the request using Pydantic models.
+3. The system identifies the requested property source.
+4. The appropriate scraper is selected automatically.
+5. Selenium or Scrapy extracts matching property listings.
+6. Results are normalized into a unified format.
+7. A structured JSON response is returned.
 
 ---
 
@@ -122,32 +144,45 @@ Depending on the selected property source, users can apply filters such as:
 
 ## Project Highlights
 
-* Built 15 independent scrapers for different property websites.
-* Implemented dynamic filter-based extraction.
-* Designed scalable API architecture using FastAPI.
-* Reduced unnecessary scraping by extracting only requested data.
-* Delivered structured and reusable JSON responses.
-* Created a maintainable and extensible scraping framework.
+* Developed **15+ custom web scrapers** for different real estate platforms.
+* Built a scalable REST API using FastAPI.
+* Implemented intelligent scraper routing based on user requests.
+* Automated property discovery using dynamic JSON filters.
+* Standardized data from multiple sources into a unified format.
+* Designed a modular architecture for easy maintenance and future expansion.
 
 ---
 
 ## Use Cases
 
-* Real Estate Data Aggregation
-* Property Search Platforms
-* Market Analysis
+* Real Estate Intelligence Platforms
+* Property Aggregation Services
+* Property Dealer Portals
+* Market Research
 * Lead Generation
-* Data Collection & Automation
-* Business Intelligence Applications
+* Business Intelligence
+* Investment Analysis
+
+---
+
+## Tech Stack
+
+* Python
+* FastAPI
+* Pydantic
+* Selenium
+* Scrapy
+* JSON
+* REST APIs
 
 ---
 
 ## Disclaimer
 
-This project is intended for educational, research, and authorized data collection purposes only. Users are responsible for complying with the terms of service and legal requirements of target websites.
+This project is intended for educational, research, and authorized data collection purposes only. Users are responsible for complying with the terms of service and legal requirements of the websites they access.
 
 ---
 
 ## Author
 
-Developed using Python, FastAPI, Pydantic, and Custom Web Scraping Solutions.
+Developed using **Python, FastAPI, Selenium, Scrapy, and Pydantic** to build scalable real estate data automation and aggregation solutions.
